@@ -1,0 +1,6 @@
+<?php $__env->startSection('abc'); ?>
+   <h2> <?php echo $detail->username; ?> </h2>
+
+   <p> <?php echo $detail->bio; ?> </p>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

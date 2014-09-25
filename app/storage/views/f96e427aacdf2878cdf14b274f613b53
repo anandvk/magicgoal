@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><?php echo $title; ?> </title>
+	<?php echo HTML::style('css/bootstrap.min.css'); ?>
+
+	<?php echo HTML::style('css/bootstrap-theme.min.css'); ?>
+
+</head>
+<body>
+	<?php echo $__env->make('layouts.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+   
+   <?php if(Session::has('message')): ?>
+    <p style="color:green;"> <?php echo Session::get('message'); ?>  </p>
+   <?php endif; ?> 
+
+	<?php echo $__env->yieldContent('abc'); ?>
+
+
+
+
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="../libs/demo-assets/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- SmartMenus jQuery plugin -->
+<script type="text/javascript" src="../jquery.smartmenus.js"></script>
+
+<!-- SmartMenus jQuery Bootstrap Addon -->
+<script type="text/javascript" src="../addons/bootstrap/jquery.smartmenus.bootstrap.js"></script>
+
+
+
+
+</body>
+</html>

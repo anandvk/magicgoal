@@ -1,0 +1,62 @@
+ 
+
+ <?php $__env->startSection('abc'); ?>
+
+      <h1>Register</h1>
+     
+     <?php if(Session::has('errors')): ?>
+
+      
+
+            <ul>
+                  <?php echo $errors->first('name'); ?>
+
+                  <?php echo $errors->first('email' ); ?>
+
+                  <?php echo $errors->first('bio' ); ?>
+
+                  <?php echo $errors->first('pass'); ?>
+
+            </ul>
+
+
+      <?php endif; ?>
+
+      <?php echo Form::open(array("URL::route('post_create')")); ?>
+
+
+      <p>
+      	<?php echo Form::label('name','Name :'); ?>
+
+      	<?php echo Form::text('name'); ?>
+
+      </p>
+
+      <p>
+      	<?php echo Form::label('email','Email :'); ?>
+
+      	<?php echo Form::text('email' ); ?>
+
+      </p>
+
+      <p>
+      	<?php echo Form::label('bio','Biodata :'); ?>
+
+      	<?php echo Form::textarea('bio'); ?>
+
+      </p>
+
+      <p>
+      	<?php echo Form::label('pass','password :'); ?>
+
+      	<?php echo Form::password('pass'); ?>
+
+      </p>
+
+      <p> <?php echo Form::submit('Add users'); ?> </p>
+
+      <?php echo Form::close(); ?>
+
+
+ <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

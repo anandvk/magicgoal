@@ -1,0 +1,31 @@
+<?php $__env->startSection('main'); ?>
+<h1>login</h1>
+
+
+<?php echo Form::open(array('route' => 'books.show')); ?>
+
+
+      <ul class="list-unstyled">
+      	<li><?php echo Form::label('name','username :'); ?>
+
+      	<?php echo Form::text('name'); ?></li>
+      
+
+      
+      	<li><?php echo Form::label('pass','password :'); ?>
+
+      	<?php echo Form::password('pass'); ?></li>
+      
+
+            <li><?php echo Form::submit('login',array('class'=>'btn btn-danger')); ?></li>
+
+
+       </ul>
+      <?php echo Form::close(); ?>
+
+
+
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('books/book', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

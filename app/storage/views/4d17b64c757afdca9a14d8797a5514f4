@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Blog, from you</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<?php echo HTML::style('css/bootstrap.min.css'); ?>
+
+	<?php echo HTML::style('css/bootstrap-theme.min.css'); ?>
+
+<style>
+body {
+padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+}
+</style>
+<?php echo HTML::script('js/bootstrap.min.js'); ?>
+
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container-fluid">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="<?php echo URL::base(); ?>">Blog</a>
+<div class="btn-group pull-right">
+
+<?php if( Auth::guest() ): ?>
+<a class="btn" href="<?php echo URL::to(‘login’); ?>">
+<i class="icon-user"></i> Login
+</a>
+<?php else: ?>
+Welcome, <strong><?php echo HTML::link(‘admin’, Auth::user()->username); ?> </strong> |
+<?php echo HTML::link(‘logout’, ‘Logout’); ?>
+
+<?php endif; ?>
+
+</div>
+<div class="nav-collapse">
+<ul class="nav">
+<li><a href="<?php echo URL::base(); ?>">Home</a></li>
+<?php if( !Auth::guest() ): ?>
+<li><a href="<?php echo URL::to(‘admin’); ?>">Create New</a></li>
+<?php endif; ?>
+</ul>
+</div><!--/.nav-collapse -->
+</div>
+</div>
+</div>
+
+<div class="container">
+<div class="row">
+<?php echo $__env->yieldContent(‘content’); ?>
+</div>
+<?php echo $__env->yieldContent(‘pagination’); ?>
+</div><!--/container-->
+
+<div class="container">
+<footer>
+<p>Blog &copy; 2012</p>
+</footer>
+</div>
+</body>
+</html>
+[/sourcecode]
+Save the file now and close it.
+
+Here is some description of what various elements do :
+
+These two lines insert Bootstrapper’s css and javascript into our layout
+[sourcecode language="html"]
+<?php echo HTML::style('css/bootstrap.min.css'); ?>
+
+	<?php echo HTML::style('css/bootstrap-theme.min.css'); ?>
+
+	<?php echo HTML::script('js/bootstrap.min.js'); ?>
+
+
+
+	
+[/sourcecode]
+
+This checks if the user is logged in and outputs a different button in that case, otherwise show another button
+[sourcecode language="html"]
+<?php if( Auth::guest() ): ?>
+…
+<?php else: ?>
+…
+<?php endif; ?>
+[/sourcecode]
+
+And this is where the content is actually outputted and pagination links created below the content
+[sourcecode language="html"]
+<div class="container">
+<div class="row">
+<?php echo $__env->yieldContent(‘content’); ?>
+</div>
+<?php echo $__env->yieldContent(‘pagination’); ?>
+</div><!--/container-->

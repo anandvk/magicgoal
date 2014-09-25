@@ -1,0 +1,32 @@
+<?php $__env->startSection('abc'); ?>
+<h1>login</h1>
+
+
+<?php echo Form::open(array("URL::route('post_login')")); ?>
+
+
+      <p>
+      	<?php echo Form::label('name','username :'); ?>
+
+      	<?php echo Form::text('name'); ?>
+
+      </p>
+
+      <p>
+      	<?php echo Form::label('pass','password :'); ?>
+
+      	<?php echo Form::password('pass'); ?>
+
+      </p>
+
+      <p> <?php echo Form::submit('login'); ?> </p>
+
+      <?php echo Form::close(); ?>
+
+
+
+
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

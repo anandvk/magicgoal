@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+    <title>ANAND's BooK SHOP:INDIA</title>
+    <meta charset="utf-8">
+    <?php echo HTML::style('css/bootstrap.min.css'); ?>
+
+    <?php echo HTML::style('css/bootstrap-theme.min.css'); ?>
+
+    
+    <?php echo Html::style('css/bootstrap-theme.css'); ?>
+
+    <?php echo Html::style('css/bootstrap-theme.css.map'); ?>
+
+    <?php echo Html::style('css/bootstrap.css'); ?>
+
+    <?php echo Html::style('css/bootstrap.css.map'); ?> 
+
+   <style>
+        table form { margin-bottom: 0; }
+        form ul { margin-left: 0; list-style: none; }
+        .error { color: red; font-style: italic; }
+        body { padding-top: 20px; }
+    </style>
+</head>
+<body>
+<div>
+<?php echo $__env->make('layouts.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</div>
+<BR>&nbsp;<BR> 
+<BR>&nbsp;<BR> 
+  
+<div class="container">
+    <?php if(Session::has('message')): ?>
+    <div class="flash alert">
+        <p><?php echo Session::get('message'); ?></p>
+    </div>
+    <?php endif; ?>
+
+    <?php echo $__env->yieldContent('main'); ?>
+</div>
+
+<?php echo Html::script('js/bootstrap.js'); ?>
+
+<?php echo Html::script('js/bootstrap.min.js'); ?>
+
+<?php echo Html::script('https://code.jquery.com/jquery-1.10.2.min.js'); ?>
+
+
+</body>
+</html>
+
+ 
