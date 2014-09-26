@@ -1,6 +1,10 @@
  @extends('layouts.default')
 
- @section('abc')
+
+
+ 
+
+ @section('abc2')
 
       <h1>Register</h1>
      
@@ -40,7 +44,7 @@
       	{{ Form::password('pass') }}
       </p>
 
-      <p> {{ Form::submit('Add users') }} </p>
+      <p> {{ Form::submit('Add users',array('class'=>'btn btn-primary')) }} </p>
 
       {{ Form::close() }}
 

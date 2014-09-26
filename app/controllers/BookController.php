@@ -16,8 +16,30 @@ class BookController extends BaseController {
 		
 		$booksList=Book::all();
 		$cate_options = DB::table('category')->orderBy('category_name', 'asc')->lists('category_name','id');
+          
+         $u= DB::table('users')->where('username', '=',Auth::user()->username)->get();
+                 
+                 foreach ($u as $user) 
+				   { 
+				    $r=$user->role;  
+				    }
+                 if($r=='master')
+                 {
+                     return View::make('books.index',array('cate_options' => $cate_options),compact('booksList'))
+                         ->with('title','details')
+	 	           
+	 	           ->with('log','Logout');
 
-        return View::make('books.index',array('cate_options' => $cate_options),compact('booksList'));
+                }
+                else
+                {
+            
+
+        return View::make('books.userbook',array('cate_options' => $cate_options),compact('booksList'))
+                         ->with('title','details')
+	 	           
+	 	           ->with('log','Logout');
+	 	       }
 	}
 
 
@@ -32,7 +54,12 @@ class BookController extends BaseController {
 		//
 	 $cate_options = DB::table('category')->orderBy('category_name', 'asc')->lists('category_name','id');
 
-    return View::make('books.create', array('cate_options' => $cate_options));
+
+
+      
+    return View::make('books.create', array('cate_options' => $cate_options))
+    ->with('title','Create')
+    ->with('log','Logout');
 		// return View::make('books.create');
 	}
 
@@ -120,7 +147,9 @@ class BookController extends BaseController {
         }
         //redirect to update form
         	$cate_options = DB::table('category')->orderBy('category_name', 'asc')->lists('category_name','id');
-        return View::make('books.edit',array('cate_options' => $cate_options), compact('book'));
+        return View::make('books.edit',array('cate_options' => $cate_options), compact('book'))
+        ->with('title','Update')
+        ->with('log','Logout');
 	}
 
 
@@ -167,6 +196,10 @@ class BookController extends BaseController {
 	public function destroy($id)
 	{
 		//
+		Book::find($id)->delete();
+        return Redirect::route('books.index')
+            ->withInput()
+            ->with('message', 'Successfully deleted Book.');
 	}
 
 	

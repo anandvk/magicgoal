@@ -20,7 +20,7 @@
 </head>
 <body>
 <div>
-@include('layouts.head')
+@include('layouts.default')
 </div>
 <BR>&nbsp;<BR> 
 <BR>&nbsp;<BR> 

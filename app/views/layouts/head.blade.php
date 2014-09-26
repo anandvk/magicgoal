@@ -24,7 +24,18 @@
     <ul class="nav navbar-nav navbar-right">
       <li>         </li>
       <li><a href="bootstrap-navbar-static-top.html"><!-- Static top --></a></li>
-      <li class="active"><a href="bootstrap-navbar-fixed-top.html"><h4>Login / Sign up</h4></a></li>
+      <li class="active"><a href="bootstrap-navbar-fixed-top.html"><h4>
+
+
+       
+
+         
+
+         {{ link_to_route('login','Login / Sign up') }}
+
+
+
+      </h4></a></li>
       <li><a href="bootstrap-navbar-fixed-bottom.html">  </a></li>
       <li><a href="#"><!-- Login --></a>
         <ul class="dropdown-menu">

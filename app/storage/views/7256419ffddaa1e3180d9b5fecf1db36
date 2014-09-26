@@ -1,6 +1,17 @@
 <?php $__env->startSection('abc'); ?>
-   <h2> <?php echo $detail->username; ?> </h2>
+	<h1>Authors</h1>
 
-   <p> <?php echo $detail->bio; ?> </p>
+<p> <?php echo HTML::linkRoute('new_author','New User'); ?> </p>
+<p> <?php echo HTML::linkRoute('login','Login'); ?> </p>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('abc2'); ?>
+
+<?php foreach($detail as $user): ?> 
+   <h2> <?php echo $user->username; ?> </h2>
+
+   <p> <?php echo $user->bio; ?> </p>
+    <?php endforeach; ?>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

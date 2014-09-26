@@ -3,7 +3,6 @@
 <h1>Welcome to my bookshop</h1>
 <p>{{ link_to_route('books.create', 'Create new book') }}</p>
 
-<p>{{ link_to_route('logout','Logout') }}</p>
 @if ($booksList->count())
 <table class="table table-striped table-bordered">
     <thead>

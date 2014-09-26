@@ -1,26 +1,40 @@
 <?php $__env->startSection('abc'); ?>
+      <h1>Authors</h1>
+
+<ul class="list-unstyled">
+   
+</ul>
+<p> <?php echo HTML::linkRoute('new_author','New User'); ?> </p>
+<p> <?php echo HTML::linkRoute('login','Login'); ?> </p>
+
+<?php $__env->stopSection(); ?>
+
+
+
+
+<?php $__env->startSection('abc2'); ?>
 <h1>login</h1>
 
 
 <?php echo Form::open(array("URL::route('post_login')")); ?>
 
 
-      <p>
-      	<?php echo Form::label('name','username :'); ?>
+      <ul class="list-unstyled">
+      	<li><?php echo Form::label('name','username :'); ?>
 
-      	<?php echo Form::text('name'); ?>
+      	<?php echo Form::text('name'); ?></li>
+      
 
-      </p>
+      
+      	<li><?php echo Form::label('pass','password :'); ?>
 
-      <p>
-      	<?php echo Form::label('pass','password :'); ?>
+      	<?php echo Form::password('pass'); ?></li>
+      
 
-      	<?php echo Form::password('pass'); ?>
+            <li><?php echo Form::submit('login',array('class'=>'btn btn-danger')); ?></li>
 
-      </p>
 
-      <p> <?php echo Form::submit('login'); ?> </p>
-
+       </ul>
       <?php echo Form::close(); ?>
 
 

@@ -1,6 +1,10 @@
  
 
- <?php $__env->startSection('abc'); ?>
+
+
+ 
+
+ <?php $__env->startSection('abc2'); ?>
 
       <h1>Register</h1>
      
@@ -53,7 +57,7 @@
 
       </p>
 
-      <p> <?php echo Form::submit('Add users'); ?> </p>
+      <p> <?php echo Form::submit('Add users',array('class'=>'btn btn-primary')); ?> </p>
 
       <?php echo Form::close(); ?>
 

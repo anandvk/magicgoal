@@ -1,13 +1,8 @@
-<?php $__env->startSection('abc'); ?>
+<?php $__env->startSection('abc2'); ?>
 	<h1>Authors</h1>
 
-<ul>
-    <?php foreach($users as $user): ?> 
-    	<li> <?php echo HTML::linkRoute('show',$user->username,array($user->id)); ?> </li>
-    <?php endforeach; ?>
-</ul>
 <p> <?php echo HTML::linkRoute('new_author','New User'); ?> </p>
-<p> <?php echo HTML::linkRoute('login','Login'); ?> </p>
+<p>  </p>
 
 <?php $__env->stopSection(); ?>
 
