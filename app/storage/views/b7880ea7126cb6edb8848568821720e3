@@ -1,7 +1,7 @@
 <?php $__env->startSection('abc2'); ?>
-	<h1>Authors</h1>
+	<h1></h1>
 
-<p> <?php echo HTML::linkRoute('new_author','New User'); ?> </p>
+
 <p>  </p>
 
 <?php $__env->stopSection(); ?>

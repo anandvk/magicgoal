@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -22,6 +22,7 @@ data-target="#example-navbar-collapse">
 <div class="collapse navbar-collapse" id="example-navbar-collapse">
 <ul class="nav navbar-nav">
 <li>{{ HTML::linkRoute('print_author','Home',null,array('style'=>'color:#abcdef','class'=>'navbar-brand')) }}</li>
+<li> {{ HTML::linkRoute('new_author','New User',null,array('style'=>'color:#abcdef','class'=>'navbar-brand')) }} </li>
 
 
 </li>
